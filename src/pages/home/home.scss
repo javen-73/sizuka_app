@@ -1,3 +1,32 @@
 page-home {
+  .home_title{
+    background-color:#FFAFC9 ;
+    border-radius: 10px;
+  }
+  .month_out{
+    font-size: 25px;
+  }
+  .month_money{
+    float:right;
+  }
+  .add_bill_button{
+    background-color:#FFAFC9 ;
+    width: 80px;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    margin: 10px auto 0px;
+    border-radius: 25px;
+  }
+  #profilePicture{
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+  }
+  #profilePicture img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50px;
+  }
 
 }

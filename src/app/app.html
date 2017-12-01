@@ -1,11 +1,10 @@
 <ion-menu [content]="content">
-  <ion-header>
-    <ion-toolbar>
-      <ion-title>Menu</ion-title>
-    </ion-toolbar>
-  </ion-header>
 
   <ion-content>
+    <div class="profile_picture">
+      <img [src]="curr_user?.profilePicture">
+    </div>
+    <div id="alias_name_box">{{curr_user?.aliasName}}</div>
     <ion-list>
       <button menuClose ion-item *ngFor="let p of pages" (click)="openPage(p)">
         {{p.title}}

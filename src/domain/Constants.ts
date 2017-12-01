@@ -1,0 +1,15 @@
+export const Constants = {
+  CURR_USER: 'CURR_USER',
+  CREATE_USER:'CREATE_USER',
+  AUTHORIZATION :"AUTHORIZATION",
+  DEFAULT_PROFILE_PICTURE: '../assets/imgs/logo.png',
+
+  //默认账簿
+  DEFAULT_ACCOUNT_BOOK:'DEFAULT_ACCOUNT_BOOK',
+  //账簿列表
+  ACCOUNT_BOOKS:'ACCOUNT_BOOKS',
+  //切换账簿
+  CHANGE_BOOK:'CHANGE_BOOK',
+
+
+}

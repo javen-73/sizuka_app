@@ -1,0 +1,16 @@
+<ion-content padding class="getting-started">
+    <form [formGroup]="loginForm" (ngSubmit)="login()">
+      <ion-item class="item-md">
+        <ion-label floating class="label-ios-primary">用户名<span style="float:right;" *ngIf="loginForm.get('username').invalid &&loginForm.get('username').touched">须以字母开始,可以包含字母数字下划线</span></ion-label>
+        <ion-input type="text" name="username" formControlName="username" minlength="4" maxlength="15" [value]="create_username" required ValidateUsername placeholder="               长度4-15位,字母开头，包含数字下划线"></ion-input>
+      </ion-item>
+      <ion-item class="item-md">
+        <ion-label floating class="label-ios-primary">密码</ion-label>
+        <ion-input type="password" name="password" formControlName="password" ValidatePassword placeholder="                6-10位密码组合"></ion-input>
+      </ion-item>
+      <div padding>
+        <a ion-button outline (click)="createAccount()">注册</a>
+        <button ion-button outline type="submit" [disabled]="!loginForm.valid">登 录</button>
+      </div>
+    </form>
+</ion-content>

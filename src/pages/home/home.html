@@ -1,18 +1,47 @@
 <ion-header>
   <ion-navbar>
-    <button ion-button menuToggle>
-      <ion-icon name="menu"></ion-icon>
-    </button>
-    <ion-title>Home</ion-title>
+    <ion-buttons start>
+      <button ion-button menuToggle>
+        <div id="profilePicture"><img [src]="current_user?.profilePicture"></div>
+      </button>
+    </ion-buttons>
+    <ion-title>{{default_account_book?.bookName}}</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="presentPopover($event)">
+        <ion-icon name="more">
+        </ion-icon>
+      </button>
+    </ion-buttons>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h3>Ionic Menu Starter</h3>
-
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will show you the way.
-  </p>
-
-  <button ion-button secondary menuToggle>Toggle Menu</button>
+  <ion-refresher (ionRefresh)="doRefresh($event)">
+    <ion-refresher-content
+      pullingIcon="arrow-dropdown"
+      pullingText="下拉刷新"
+      refreshingSpinner="circles"
+      refreshingText="正在刷新...">
+    </ion-refresher-content>
+  </ion-refresher>
+  <ion-grid class="home_title">
+    <ion-row>
+      <ion-col col-12>本月支出(元)</ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-1><span class="month_out">¥</span></ion-col>
+      <ion-col col-11><span class="month_out month_money">125215.54</span></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-4>本月剩余(元)</ion-col>
+      <ion-col col-8><span class="month_money">125215.54</span></ion-col>
+    </ion-row>
+  </ion-grid>
+  <div class="add_bill_button"> <ion-icon name="add"></ion-icon>&nbsp;记一笔</div>
+  <ion-list>
+    <ion-item *ngFor="let i of item">Counter:{{i.counter}}---CurrentPage:{{i.page}}</ion-item>
+  </ion-list>
+  <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
+    <ion-infinite-scroll-content></ion-infinite-scroll-content>
+  </ion-infinite-scroll>
 </ion-content>

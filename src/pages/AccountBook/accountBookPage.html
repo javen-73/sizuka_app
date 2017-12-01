@@ -1,0 +1,23 @@
+<ion-list radio-group  class="popover-page">
+  <ion-row>
+    <ion-col>
+      <button  ion-item  outline class="popover-text-button popover-text-smaller" (click)="addBook()">添加账簿</button>
+    </ion-col>
+  </ion-row>
+<!--  <ion-item class="text-athelas">
+    <ion-label>默认账簿</ion-label>
+    <ion-radio value="default"></ion-radio>
+  </ion-item>-->
+  <ion-list>
+    <ion-item-sliding #item *ngFor="let book of accountBooks">
+      <ion-item (click)="onSelectBook(book?.id)">
+        {{book?.bookName}}
+      </ion-item>
+      <ion-item-options side="right">
+        <button ion-button (click)="updateBook(book?.id)">修改</button>
+        <button ion-button color="danger" (click)="delBook(book?.id)" >删除</button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+</ion-list>
