@@ -2,7 +2,6 @@ import {Component, ViewChild} from '@angular/core';
 import {Events, MenuController, ModalController, Nav, Platform, ToastController} from 'ionic-angular';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
-
 import { HomePage } from '../pages/home/home';
 import { ListPage } from '../pages/list/list';
 import { Login } from '../pages/login/login';
@@ -29,7 +28,6 @@ export class MyApp {
               public storageService: StorageService,
               public modalCtrl: ModalController) {
     this.initializeApp();
-
     // used for an example of ngFor and navigation
     this.pages = [
       { title: '记一笔', component: HomePage },

@@ -1,9 +1,8 @@
-import {DateTime} from "ionic-angular";
 
 export class AccountBook{
   constructor(public id:number,
                 public userId:number,
                 public bookName:string,
                 public status:number,
-                public createTime:DateTime){}
+                public createTime:Date){}
 }

@@ -1,0 +1,24 @@
+page-bill-add{
+  .tags_name{
+    margin-top: 20px;
+    margin-left: 10px;
+  }
+  .icon_tags_activity{
+    width: 32%;
+    @include tada()
+  }
+  .icon_tags_activity:hover{
+    box-shadow: 0px 0px 3px #FFAFC9;
+  }
+  .selectd_icon_show{
+    height: 20%;
+    width: 30%;
+  }
+  /*.number_input{
+    border-radius: 5px;
+    border: 1px solid #FFAFC9;
+    height: 50px;
+    margin-top: 5px;
+    float: right;
+  }*/
+}

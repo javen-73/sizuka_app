@@ -1,0 +1,65 @@
+<ion-header>
+
+  <ion-navbar no-border-bottom>
+    <ion-title>记一笔</ion-title>
+    <ion-buttons end>
+      <button ion-button icon-only (click)="save()">
+        保存
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+  <ion-toolbar no-border-top>
+    <ion-segment [(ngModel)]="priceType">
+      <ion-segment-button value="0">
+        支出
+      </ion-segment-button>
+      <ion-segment-button value="1">
+        收入
+      </ion-segment-button>
+    </ion-segment>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content class="outer-content">
+  <ion-item>
+    <ion-label color="primary" fixed>
+      <span class="selectd_icon_show" color="light_self" *ngFor="let icon_default of selected_default">
+        <ion-icon name="ai-yishizhuhangzitisheji-{{icon_default?.id}}"></ion-icon>
+        <span class="tags_name">{{icon_default?.typeName}}</span>
+      </span>
+    </ion-label>
+    <ion-input type="number"placeholder="输入收支金额" [(ngModel)]="money"></ion-input>
+  </ion-item>
+  <ion-item>
+    <ion-label>日期</ion-label>
+    <ion-datetime displayFormat="YYYY/MM/DD" [(ngModel)]="add_date">
+    </ion-datetime>
+  </ion-item>
+  <ion-item>
+    <ion-label color="primary" stacked>备注</ion-label>
+    <ion-input type="text" placeholder="说点什么" [(ngModel)]="remark"></ion-input>
+  </ion-item>
+ <!-- <div>
+    <span>
+      <span class="selectd_icon_show" color="light_self" *ngFor="let icon_default of selected_default">
+        <ion-icon name="ai-yishizhuhangzitisheji-{{icon_default?.id}}"></ion-icon>
+        <span class="tags_name">{{icon_default?.typeName}}</span>
+      </span>
+    </span>
+    <span>
+      <input type="number"  placeholder="输入收支金额" class="number_input"size="11"/>
+    </span>
+  </div>-->
+  <ion-slides pager style="height: 30%">
+    <ion-slide *ngFor="let i_outer of getItems(priceType)">
+      <button ion-button color="light_self" *ngFor="let i_inner of i_outer" class="icon_tags_activity"
+              (click)="selected_icon(i_inner)">
+        <ion-icon name="ai-yishizhuhangzitisheji-{{i_inner.id}}"></ion-icon>
+        <span class="tags_name">{{i_inner.typeName}}</span>
+      </button>
+    </ion-slide>
+  </ion-slides>
+
+</ion-content>

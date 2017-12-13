@@ -8,17 +8,19 @@ import 'rxjs/add/operator/timeout';
 import { StorageService } from "./storage-service";
 import {ResultEntity} from "../domain/ResultEntity";
 import {Constants} from "../domain/Constants";
+import { Dialogs } from '@ionic-native/dialogs';
 import {User} from "../domain/User";
 
 @Injectable()
 export class HttpService {
-  hostUrl:string = "http://172.20.10.201:7373";
+  hostUrl:string = "http://172.20.10.159:7373";
   TIME_OUT:number = 30000;
   constructor(
     private http: Http,
     public loadingCtrl: LoadingController ,
     public storageService:StorageService,
     public toastCtrl: ToastController,
+    public dialogs: Dialogs,
     public alertCtrl:AlertController
   ) {
     //this.local = new Storage(LocalStorage);
@@ -32,6 +34,10 @@ export class HttpService {
       buttons: ['确定']
     });
     alert.present();
+  }
+  public layer(msg:string,title?:string) {
+    if(title==null) title='提示';
+    this.dialogs.alert(msg,title);
   }
 
   public loading():Loading{
@@ -59,6 +65,19 @@ export class HttpService {
     return this.http.get(url,options).timeout(this.TIME_OUT).toPromise()
       .then(res => res.json())
       .catch(err => {
+        this.handleError(err);
+      });
+  }
+
+  /**不需身份验证的get请求 */
+  public httpGetNoAuth(url: string) {
+    url = `${this.hostUrl}/${url}`;
+    var headers = new Headers();
+    let options = new RequestOptions({ headers: headers });
+    return this.http.get(url, options).timeout(this.TIME_OUT).toPromise()
+      .then(res => res.json())
+      .catch(err => {
+        console.log('访问错误：'+err);
         this.handleError(err);
       });
   }
@@ -93,7 +112,7 @@ export class HttpService {
   }
 
   private handleError(error: Response) {
-    this.alert("提示",error.toString());
+    this.alert("服务器连接失败",'提示');
     return Observable.throw(error.json().error || 'Server Error');
   }
   /**当前登录用户 */
@@ -103,7 +122,7 @@ export class HttpService {
 
   getToken(){
     let user = this.getCurrUser();
-    if(user==null){this.alert('Token错误,请登录重试')}
+    if(user==null){this.layer('Token错误,请登录重试')}
     return user.token;
   }
 }

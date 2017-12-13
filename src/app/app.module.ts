@@ -16,9 +16,11 @@ import {ValidatePassword} from '../directives/validate.password';
 import {HttpService} from "../providers/http-service";
 import {HttpModule, JsonpModule} from '@angular/http';
 import {DatePipe} from "@angular/common";
+import {Dialogs} from "@ionic-native/dialogs"
 import {AccountBookPage} from "../pages/AccountBook/accountBookPage";
 import {CreateAccount} from "../pages/createAccount/create-account"
-
+import {BillAdd} from "../pages/bill-add/bill-add";
+import {ValidateMoney} from "../directives/validate.money"
 @NgModule({
   declarations: [
     MyApp,
@@ -27,8 +29,10 @@ import {CreateAccount} from "../pages/createAccount/create-account"
     Login,
     ValidateUsername,
     ValidatePassword,
+    ValidateMoney,
     AccountBookPage,
-    CreateAccount
+    CreateAccount,
+    BillAdd
   ],
   imports: [
     BrowserModule,
@@ -45,12 +49,14 @@ import {CreateAccount} from "../pages/createAccount/create-account"
     ListPage,
     Login,
     AccountBookPage,
-    CreateAccount
+    CreateAccount,
+    BillAdd
   ],
   providers: [
     StatusBar,
     SplashScreen,
     DatePipe,
+    Dialogs,
     HttpService,
     StorageService,
     {provide: ErrorHandler, useClass: IonicErrorHandler},

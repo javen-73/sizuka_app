@@ -39,7 +39,8 @@ $colors: (
   danger:     #f53d3d,
   light:      #FFAFC9,
   dark:       #FFAFC9,
-  alarm:      #66ccff
+  alarm:      #66ccff,
+  light_self: #fff
 );
 
 
@@ -73,14 +74,12 @@ $colors: (
 
 @import "ionic.theme.default";
 
-
+$ionicons-font-path: "../assets/fonts";
 // Ionicons
 // --------------------------------------------------
 // The premium icon font for Ionic. For more info, please see:
 // http://ionicframework.com/docs/ionicons/
-
-@import "ionic.ionicons";
-
+@import "ionicons";
 
 // Fonts
 // --------------------------------------------------

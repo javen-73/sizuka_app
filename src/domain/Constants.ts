@@ -11,5 +11,8 @@ export const Constants = {
   //切换账簿
   CHANGE_BOOK:'CHANGE_BOOK',
 
+  //Home页面展示的数据
+  ACCOUNT_ITEM:'ACCOUNT_ITEM',
+
 
 }

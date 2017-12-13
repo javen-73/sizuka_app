@@ -48,6 +48,7 @@ export class Login{
     loader.present();
     let pwd = this.loginForm.controls['password'].value;
     this.loginForm.controls['password'].setValue(Md5.hashStr(this.loginForm.controls['password'].value).toString());
+    console.log(this.loginForm.value)
     this.httpService.httpPostNoAuth("account/login",this.loginForm.value)
       .then(result=>{
         loader.dismiss();

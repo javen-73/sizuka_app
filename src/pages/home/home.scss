@@ -1,7 +1,14 @@
 page-home {
   .home_title{
-    background-color:#FFAFC9 ;
+    background-color:#FFFFFF ;
     border-radius: 10px;
+    height: 20%;
+    background-image: url("../../assets/imgs/item_bg.png");
+    color: ivory;
+    box-shadow: 6px 6px 3px #888888;
+  }
+  .home_title:active{
+    @include hinge()
   }
   .month_total{
     font-size: 20px;
@@ -15,6 +22,11 @@ page-home {
     text-align: center;
     margin: 10px auto 0px;
     border-radius: 25px;
+    box-shadow: 2px 2px 1px #888888;
+  }
+  .add_bill_button:active{
+    @include wobble();
+
   }
   #profilePicture{
     width: 30px;
@@ -26,5 +38,36 @@ page-home {
     height: 100%;
     border-radius: 50px;
   }
+  .item_right{
+    float: right;
+    margin-right: 10px;
+  }
+  .item_top_center{
+    text-align: center;
+  }
+  .top_pre_item{
+    width: 50%;
+    float: left;
+    text-align: center;
+  }
+  .top_next_item{
+    width: 50%;
+    float: right;
+    text-align: center;
+  }
+  .item_border{
+    border:1px solid #FBBFD1;
+    border-radius: 15px;
+    height: 14%;
+    margin-top: 7px;
+    font-size: 16px;
+    background-image: url("../../assets/imgs/item_bg.png");
+    box-shadow: 3px 3px 2px #888888;
+    color: ivory;
+  }
+  .item_border:hover{
+    @include rubberBand()
+  }
+
 
 }
