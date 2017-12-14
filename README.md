@@ -11,6 +11,8 @@
 [app 前端源码](https://github.com/javen-73/sizuka_app)
 
 ----------
+## [Sizuka APP直达地址](http://aihiaihi.com)
+
 废话不多说，先上效果图(bug图)
 ![](http://aihiaihi.com/img/show.gif)
 
