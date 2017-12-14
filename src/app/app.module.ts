@@ -21,12 +21,14 @@ import {AccountBookPage} from "../pages/AccountBook/accountBookPage";
 import {CreateAccount} from "../pages/createAccount/create-account"
 import {BillAdd} from "../pages/bill-add/bill-add";
 import {ValidateMoney} from "../directives/validate.money"
+import {Logout} from "../pages/logout/logout";
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     ListPage,
     Login,
+    Logout,
     ValidateUsername,
     ValidatePassword,
     ValidateMoney,
@@ -48,6 +50,7 @@ import {ValidateMoney} from "../directives/validate.money"
     HomePage,
     ListPage,
     Login,
+    Logout,
     AccountBookPage,
     CreateAccount,
     BillAdd

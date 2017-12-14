@@ -8,6 +8,7 @@ import { Login } from '../pages/login/login';
 import {Constants} from "../domain/Constants";
 import {User} from "../domain/User";
 import {StorageService} from "../providers/storage-service";
+import {Logout} from "../pages/logout/logout";
 
 @Component({
   templateUrl: 'app.html'
@@ -32,8 +33,7 @@ export class MyApp {
     this.pages = [
       { title: '记一笔', component: HomePage },
       { title: '月账单', component: ListPage },
-      { title: '退出登录', component: ListPage },
-      { title: '测试页面', component: Login }
+      { title: '退出登录', component: Logout }
     ];
     this.initEvent();
 
