@@ -9,6 +9,7 @@ import {Constants} from "../domain/Constants";
 import {User} from "../domain/User";
 import {StorageService} from "../providers/storage-service";
 import {Logout} from "../pages/logout/logout";
+import {About} from "../pages/about/about";
 
 @Component({
   templateUrl: 'app.html'
@@ -33,6 +34,7 @@ export class MyApp {
     this.pages = [
       { title: '记一笔', component: HomePage },
       { title: '月账单', component: ListPage },
+      { title: '关   于', component: About },
       { title: '退出登录', component: Logout }
     ];
     this.initEvent();

@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="arrow-back"></ion-icon>
+    </button>
+    <ion-title></ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+  <div>版本:{{version}}</div>
+  <div *ngFor="let u of update">
+    {{u}}
+  </div>
+  更新时间:{{createTime}}
+  <hr>
+  <div>
+    联系我:javen73@163.com
+  <br/>
+    <a href="https://github.com/javen-73/sizuka_app">git源码地址</a>
+  </div>
+</ion-content>

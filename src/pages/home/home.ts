@@ -22,6 +22,7 @@ export class HomePage{
   money_data:AccountItemResult;
   lastPage:boolean;
   up:boolean= false;
+  no_more = ''
   constructor(public navCtrl: NavController,
                 public storageService:StorageService,
                 public popoverCtrl:PopoverController,
@@ -41,16 +42,18 @@ export class HomePage{
     if(this.up)return;
     this.up=true;
 
-    console.log('是否可以拉取'+this.lastPage);
+    console.log('是否可以拉取'+!this.lastPage);
     setTimeout(() => {
       if(!this.lastPage){
+        console.log("正在拉取")
         this.upflush()
         this.page++
       }else {
-        this.httpService.alert("没有更多了");
+        this.no_more ='暂无更多'
         infiniteScroll.complete()
         this.up=false;
       }
+      infiniteScroll.complete();
     }, 500);
     infiniteScroll.complete();
   }

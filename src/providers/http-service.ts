@@ -13,7 +13,7 @@ import {User} from "../domain/User";
 
 @Injectable()
 export class HttpService {
-  hostUrl:string = "http://172.20.10.159:7373";
+  hostUrl:string = "http://localhost:7373";
   TIME_OUT:number = 30000;
   constructor(
     private http: Http,

@@ -22,6 +22,7 @@ import {CreateAccount} from "../pages/createAccount/create-account"
 import {BillAdd} from "../pages/bill-add/bill-add";
 import {ValidateMoney} from "../directives/validate.money"
 import {Logout} from "../pages/logout/logout";
+import {About} from "../pages/about/about";
 @NgModule({
   declarations: [
     MyApp,
@@ -29,6 +30,7 @@ import {Logout} from "../pages/logout/logout";
     ListPage,
     Login,
     Logout,
+    About,
     ValidateUsername,
     ValidatePassword,
     ValidateMoney,
@@ -51,6 +53,7 @@ import {Logout} from "../pages/logout/logout";
     ListPage,
     Login,
     Logout,
+    About,
     AccountBookPage,
     CreateAccount,
     BillAdd

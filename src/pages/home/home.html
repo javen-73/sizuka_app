@@ -50,13 +50,15 @@
   <div class="item_border" *ngFor="let i of items">
     <br/>
     <div>
-      <span><ion-icon name="i-sizuka-{{i.itemStatus}}"></ion-icon></span>
+      <span><ion-icon name="i-sizuka-{{i.priceType}}"></ion-icon></span>
       <span class="item_type">{{i.itemType}}</span>
-      <span><span class="item_right">{{i.price>0?'+':'-'}}{{i.price}}</span></span>
+      <span><span class="item_right">{{i.itemStatus==1?'+':'-'}}{{i.price}}</span></span>
     </div>
     <br/>
     <span class="item_right">{{i.createTime}}</span>
   </div>
+  <div id="buttom_show">{{no_more}}</div>
+  <hr>
   <ion-infinite-scroll (ionInfinite)="doInfinite($event)">
     <ion-infinite-scroll-content></ion-infinite-scroll-content>
   </ion-infinite-scroll>

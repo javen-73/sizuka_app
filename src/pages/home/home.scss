@@ -65,6 +65,10 @@ page-home {
     box-shadow: 3px 3px 2px #888888;
     color: ivory;
   }
+  #buttom_show{
+    margin-top: 5px;
+    text-align: center;
+  }
   .item_border:hover{
     @include rubberBand()
   }

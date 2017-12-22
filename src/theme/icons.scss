@@ -29,7 +29,7 @@
   .ion-md-ai-#{$arg}-outline:before  {
     content: $val;
     font-size: 26px;
-    color: #FFAFC9;
+    color: #000000;
   }
 }
 @mixin makeSizuka($arg, $val) {
@@ -44,7 +44,6 @@
   }
 }
 
-@include makeIcon(yishizhuhangzitisheji-10,'\e69c')
 @include makeIcon(yishizhuhangzitisheji-0,'\e625')
 @include makeIcon(yishizhuhangzitisheji-1,'\e626')
 @include makeIcon(yishizhuhangzitisheji-2,'\e62a')
@@ -56,7 +55,11 @@
 @include makeIcon(yishizhuhangzitisheji-8,'\e635')
 @include makeIcon(yishizhuhangzitisheji-9,'\e638')
 @include makeIcon(yishizhuhangzitisheji-10,'\e69c')
-
+@include makeIcon(yishizhuhangzitisheji-11,'\e655')
+@include makeIcon(yishizhuhangzitisheji-12,'\e615')
+@include makeIcon(yishizhuhangzitisheji-13,'\e601')
+@include makeIcon(yishizhuhangzitisheji-14,'\e600')
+@include makeIcon(yishizhuhangzitisheji-15,'\e679')
 
 @include makeSizuka(sizuka-0,'\e625')
 @include makeSizuka(sizuka-1,'\e626')
@@ -69,6 +72,12 @@
 @include makeSizuka(sizuka-8,'\e635')
 @include makeSizuka(sizuka-9,'\e638')
 @include makeSizuka(sizuka-10,'\e69c')
+@include makeSizuka(sizuka-11,'\e655')
+@include makeSizuka(sizuka-12,'\e615')
+@include makeSizuka(sizuka-13,'\e601')
+@include makeSizuka(sizuka-14,'\e600')
+@include makeSizuka(sizuka-15,'\e679')
+
 
 
 /*
